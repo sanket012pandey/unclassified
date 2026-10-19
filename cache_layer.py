@@ -1,8 +1,6 @@
 import redis
 import hashlib
 import json
-from typing import List
-from pydantic import BaseModel
 from input_schema import inputSchema
 from output_schema import OutputSchema
 from predict import make_prediction
