@@ -26,6 +26,6 @@ def  save_new_pred(input:inputSchema):
     key = cache_key(input)
     result = make_prediction(input.model_dump())
     response_data =  OutputSchema(prediction_classifier = result)
-    redis_client.set(key , response_data.model_dump_json() , ex = 3600)
+    redis_client.setex(key , response_data.model_dump_json() , ex = 3600)
 
     return response_data
